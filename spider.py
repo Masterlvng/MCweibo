@@ -24,7 +24,7 @@ class Spider:
 
     def work(self):
         reg_Column = re.compile('<table width="100%" cellpadding="3">(.*?)</table>')
-        reg_News = re.compile('<a\s+href=(.*?)\s+target="_blank"\stitle=(.*?)>.*?</a>')
+        reg_News = re.compile('<a.*?href="(.*?)"\s+target="_blank"\stitle=(.*?)>.*?</a>')
         r = rq.get(self.url)
         Column = reg_Column.findall(r.text)
         rst = []
